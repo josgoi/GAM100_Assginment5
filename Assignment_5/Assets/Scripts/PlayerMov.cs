@@ -17,6 +17,10 @@ public class PlayerMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mouseDirection = (mousePos - (Vector2)transform.position).normalized;
+        transform.up = -mouseDirection;
+
         Vector2 move = Vector2.zero; 
     
         if(Input.GetKey(KeyCode.W))
