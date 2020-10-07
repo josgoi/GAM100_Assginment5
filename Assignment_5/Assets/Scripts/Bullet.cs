@@ -15,4 +15,9 @@ public class Bullet : MonoBehaviour
         rb.velocity = mouseDirection * speed;
     }
 
+    void OnTriggerEnter()
+    {
+        Destroy(gameObject);
+    }
+
 }
