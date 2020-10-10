@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D hitObj)
     {
-        if(hitObj.gameObject.name.Contains("Ball"))
+        if(!hitObj.gameObject.name.Contains("Player"))
             Destroy(gameObject);
     }
 

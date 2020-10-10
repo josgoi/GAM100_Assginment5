@@ -5,12 +5,11 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class GoalRed : MonoBehaviour
 {
-    private Score;
+    int Score;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-
+        Score = 0;
     }
 
     void OnCollisionEnter2D(Collision2D hitObj)
@@ -18,11 +17,11 @@ public class GoalRed : MonoBehaviour
         if (hitObj.gameObject.name.Contains("BigBallRed"))
         {
             Destroy(hitObj.gameObject);
-            GoalYellow.Score += 200;
+            Score += 200;
         }else if (hitObj.gameObject.name.Contains("SmallBallRed"))
         {
             Destroy(hitObj.gameObject);
-            GoalYellow.Score += 100;
+            Score += 100;
         }
     }
 }

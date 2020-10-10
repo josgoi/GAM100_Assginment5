@@ -5,12 +5,11 @@ using UnityEngine;
 public class GoalYellow : MonoBehaviour
 {
 
-    public int Score = 0;
+    int Score;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-
+        Score = 0;
     }
 
     void OnCollisionEnter2D(Collision2D hitObj)
