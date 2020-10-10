@@ -15,10 +15,10 @@ public class Bullet : MonoBehaviour
         rb.velocity = mouseDirection * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D hitObj)
+    void OnCollisionEnter2D(Collision2D hitObj)
     {
-        if(hitObj.name == "Cube");
-            Destroy(hitObj.gameObject);
+        if(hitObj.gameObject.name.Contains("Ball"))
+            Destroy(gameObject);
     }
 
 }
