@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class GoalBlue : MonoBehaviour
 {
-    int Score;
-
     void Start()
     {
-        Score = 0;
+        
     }
 
     void OnCollisionEnter2D(Collision2D hitObj)
@@ -16,12 +14,14 @@ public class GoalBlue : MonoBehaviour
         if (hitObj.gameObject.name.Contains("BigBallBlue"))
         {
             Destroy(hitObj.gameObject);
-            Score += 200;
+            GameObject.Find("GoalYellow").GetComponent<GoalYellow>().Score += 200;
+            GameObject.Find("GoalYellow").GetComponent<GoalYellow>().SetScoreText();
         }
         else if (hitObj.gameObject.name.Contains("SmallBallBlue"))
         {
             Destroy(hitObj.gameObject);
-            Score += 100;
+            GameObject.Find("GoalYellow").GetComponent<GoalYellow>().Score += 100;
+            GameObject.Find("GoalYellow").GetComponent<GoalYellow>().SetScoreText();
         }
     }
 }
