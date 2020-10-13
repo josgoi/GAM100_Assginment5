@@ -13,12 +13,14 @@ public class BallHealth : MonoBehaviour
         {
             Destroy(gameObject);
             GameObject.Find("Player").GetComponent<Shooting>().BallsDestroyed++;
+            GameObject.Find("Player").GetComponent<Shooting>().TotalBalls--;
+            GameObject.Find("Player").GetComponent<Shooting>().BallsLeftText();
         }
     }
 
     void OnCollisionEnter2D(Collision2D hitObj)
     {
-        if (!hitObj.gameObject.name.Contains("Bullet"))
+        if (hitObj.gameObject.name.Contains("Bullet"))
         {
             Health--;
         }
