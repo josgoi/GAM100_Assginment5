@@ -28,6 +28,7 @@ public class Shooting : MonoBehaviour
         {
             SetEndText();
             EndTextobject.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
